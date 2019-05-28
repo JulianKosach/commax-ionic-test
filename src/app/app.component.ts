@@ -4,11 +4,17 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
 import { HomePage } from '../pages/home/home';
+import { CompanyAddPage } from '../pages/company-add/company-add';
+import { CompanyDetailsPage } from '../pages/company-details/company-details';
 @Component({
   templateUrl: 'app.html'
 })
 export class MyApp {
-  rootPage:any = HomePage;
+  rootPage: any = HomePage;
+  pages: Array<{ title: string, component: any }> = [
+    { title: 'Add a Company', component: CompanyAddPage },
+    { title: 'Company Details', component: CompanyDetailsPage }
+  ];
 
   constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen) {
     platform.ready().then(() => {
